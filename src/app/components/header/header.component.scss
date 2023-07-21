@@ -1,0 +1,16 @@
+@import '../../shared/styles/variables';
+
+header {
+    height: $header-height;
+    max-height: $header-height;
+    width: 100%;
+    border-radius: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    display: flex;
+    align-items: center;
+}
+h2 {
+    margin-left: 8px;
+}

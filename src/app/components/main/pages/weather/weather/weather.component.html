@@ -1,0 +1,49 @@
+<div class="container">
+  <div
+    *ngIf="!hasError; else showError"
+    class="modal-container glass-container"
+  >
+    <h1 class="city-name">{{ weatherData.name }}</h1>
+    <section class="data-section">
+      <div class="item">
+        <span class="field-name">Temp Now: {{ weatherData.main.temp }} °C</span>
+      </div>
+      <div class="item">
+        <span class="field-name"
+          >Feel Like: {{ weatherData.main.feels_like }} °C</span
+        >
+      </div>
+      <div class="item">
+        <span class="field-name">Min: {{ weatherData.main.temp_min }} °C</span>
+      </div>
+      <div class="item">
+        <span class="field-name">Max: {{ weatherData.main.temp_max }} °C</span>
+      </div>
+      <div class="item">
+        <span class="field-name"
+          >Pressure: {{ weatherData.main.pressure }} mm</span
+        >
+      </div>
+      <div class="item">
+        <span class="field-name"
+          >Humidity: {{ weatherData.main.humidity }} %</span
+        >
+      </div>
+    </section>
+    <section *ngFor="let weather of weatherData.weather" class="main">
+      <h4>Weather</h4>
+      <div class="item">
+        <span class="field-name">Status: {{ weather.main }}</span>
+      </div>
+      <div class="item">
+        <span class="field-name">Description: {{ weather.description }}</span>
+      </div>
+    </section>
+  </div>
+</div>
+<ng-template #showError>
+  <div class="modal-container glass-container error">
+    <h1 class="error-title">Cannot get data</h1>
+    <span class="error-description">Maybe the city doesn't exist</span>
+  </div>
+</ng-template>

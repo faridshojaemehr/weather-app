@@ -1,0 +1,14 @@
+@import '../../shared/styles/variables';
+
+footer {
+    height: $footer-height;
+    max-height: $footer-height;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0px;
+    border: 0px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
