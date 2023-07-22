@@ -7,33 +7,33 @@
     <section class="data-section">
       <div class="item">
         <span class="field-name">{{ "content.temp" | translate }} : </span>
-        <span class="result">{{ weatherData.main.temp }} °C</span>
+        <span class="result">{{ weatherData?.main.temp }} °C</span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.Feel_Like" | translate }}: </span>
-        <span class="result"> {{ weatherData.main.feels_like }} °C </span>
+        <span class="result"> {{ weatherData?.main.feels_like }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.min" | translate }}: </span>
-        <span class="result"> {{ weatherData.main.temp_min }} °C </span>
+        <span class="result"> {{ weatherData?.main.temp_min }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.max" | translate }}: </span>
-        <span class="result"> {{ weatherData.main.temp_max }} °C </span>
+        <span class="result"> {{ weatherData?.main.temp_max }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.pressure" | translate }}: </span>
-        <span class="result"> {{ weatherData.main.pressure }} mm </span>
+        <span class="result"> {{ weatherData?.main.pressure }} mm </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.humidity" | translate }}: </span>
-        <span class="result"> {{ weatherData.main.humidity }}% </span>
+        <span class="result"> {{ weatherData?.main.humidity }}% </span>
       </div>
-      <div class="description" *ngFor="let weather of weatherData.weather">
+      <div class="description" *ngFor="let weather of weatherData?.weather">
         <div class="item">
           <span class="field-name">{{ "content.status" | translate }}: </span>
           <span class="result">
-            {{ weather.main }}
+            {{ weather?.main }}
           </span>
         </div>
         <div class="item">
@@ -41,7 +41,7 @@
             >{{ "content.description" | translate }}:</span
           >
           <span class="result">
-            {{ weather.description | titlecase }}
+            {{ weather?.description | titlecase }}
           </span>
         </div>
       </div>

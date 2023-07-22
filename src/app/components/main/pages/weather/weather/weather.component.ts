@@ -1,10 +1,5 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { IError } from 'src/app/core/models/error.interface';
 import { IWeather } from 'src/app/core/models/weather/weather.interface';
 import { WeatherService } from 'src/app/core/services/weather/weather.service';
@@ -21,7 +16,10 @@ export class WeatherComponent implements OnChanges {
   public weatherData: IWeather;
   public hasError: boolean = false;
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private _snackBar: MatSnackBar,
+    private weatherService: WeatherService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.getCityWeatherData(this.cityName);
@@ -36,7 +34,15 @@ export class WeatherComponent implements OnChanges {
       error: (err) => {
         this.hasError = true;
         this.errorObj = err.error;
+        this.openSnackBar(
+          ` ${this.cityName}  : ${this.errorObj.message}`,
+          'close'
+        );
       },
     });
+  }
+
+  public openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 }

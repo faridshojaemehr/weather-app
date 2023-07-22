@@ -13,8 +13,9 @@
 .search-btn {
     font-weight: bold;
     font-size: 16px;
-    background-color: lime;
+    background-color: gray;
     height: 56px !important;
+    color: var(--text-color);
 }
 .form-field {
     width: 85vw !important;
