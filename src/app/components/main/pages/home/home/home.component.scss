@@ -1,0 +1,29 @@
+section {
+    display: flex;
+    justify-content: center;
+    margin: 0px 16px;
+    padding: 16px;
+}
+
+input {
+    width: 50%;
+    padding: 8px;
+    margin: 0 16px;
+    background-color: rgb(17, 67, 124);
+    border-radius: 8px;
+    border-color: rgb(4, 7, 32);
+
+}
+input:checked {
+    border-color: rgb(4, 7, 32);
+
+}
+
+.search-btn {
+    font-size: 12px;
+    font-weight: 500;
+    background-color: rgb(17, 67, 124);
+    color: aqua;
+    border-radius: 8px;
+    border-color: rgb(6, 10, 59);
+}

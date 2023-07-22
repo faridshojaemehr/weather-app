@@ -1,2 +1,9 @@
 <!-- <app-weather></app-weather> -->
-<app-weather></app-weather>
+
+<div class="container">
+  <section>
+    <input type="text" #input />
+    <button class="search-btn" (click)="search(input.value)">search</button>
+  </section>
+</div>
+<app-weather [cityName]="cityName"></app-weather>

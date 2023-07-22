@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IWeather } from 'src/app/core/models/weather/weather.interface';
 import { WeatherService } from 'src/app/core/services/weather/weather.service';
@@ -8,35 +14,24 @@ import { WeatherService } from 'src/app/core/services/weather/weather.service';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
 })
-export class WeatherComponent implements OnInit {
-  public cityName: string;
+export class WeatherComponent implements OnInit, OnChanges {
+  @Input() public cityName: string;
+
   public weatherData: IWeather;
   public hasError: boolean = false;
 
-  constructor(
-    private readonly activatedRoute: ActivatedRoute,
-    private weatherService: WeatherService
-  ) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.getCityNameInUrl();
-    this.getCityWeatherData();
+    this.getCityWeatherData(this.cityName);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getCityWeatherData(this.cityName);
   }
 
-  public getCityNameInUrl(): void {
-    this.activatedRoute.params.subscribe((route) => {
-      this.cityName = route['cityName'];
+  public getCityWeatherData(city: string) {
+    this.weatherService.getWeather(city).subscribe((weatherData: IWeather) => {
+      this.weatherData = weatherData;
     });
-  }
-
-  public getCityWeatherData(): void {
-    this.weatherService.getWeather(this.cityName).subscribe(
-      (weatherData: IWeather) => {
-        this.weatherData = weatherData;
-      },
-      (error) => {
-        this.hasError = true;
-      }
-    );
   }
 }
