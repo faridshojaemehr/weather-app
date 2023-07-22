@@ -1,8 +1,7 @@
-@import '../../shared/styles/variables';
 
 footer {
-    height: $footer-height;
-    max-height: $footer-height;
+    height: var(--footer-height);
+    max-height: var(--footer-height);
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -11,4 +10,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--footer-color);
 }

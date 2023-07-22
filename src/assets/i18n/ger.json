@@ -1,0 +1,23 @@
+{
+  "header": {
+    "weather": "Wetter"
+  },
+  "content": {
+    "temp": "Temp",
+    "Feel_Like": "Fühlt sich an wie",
+    "min": "Mindest",
+    "max": "Max",
+    "pressure": "Druck",
+    "humidity": "Feuchtigkeit",
+    "deatils": "Wetter",
+    "status": "Status",
+    "description": "Beschreibung"
+  },
+  "error": {},
+  "message": {},
+  "lang": {
+    "en": "Englisch",
+    "ger": "Deutschland",
+    "fr": "Französisch"
+  }
+}
