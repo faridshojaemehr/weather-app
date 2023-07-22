@@ -3,7 +3,7 @@
     "weather": "Wetter"
   },
   "content": {
-    "temp": "Temp",
+    "temp": "Aktuelle Temperatur",
     "Feel_Like": "Fühlt sich an wie",
     "min": "Mindest",
     "max": "Max",
@@ -15,9 +15,10 @@
   },
   "error": {},
   "message": {},
+  "language": "Sprache",
   "lang": {
     "en": "Englisch",
-    "ger": "Deutschland",
+    "de": "Deutschland",
     "fr": "Französisch"
   }
 }

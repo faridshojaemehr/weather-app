@@ -1,4 +1,8 @@
-
+.container {
+    display: flex;
+    justify-content: space-between;
+    
+}
 header {
     height: var(--header-height);
     max-height: var(--header-height);
@@ -13,4 +17,7 @@ header {
 h2 {
     color: var(--header-color);
     margin-left: 8px;
+}
+.menu-button {
+    color: var(--text-color) !important;
 }

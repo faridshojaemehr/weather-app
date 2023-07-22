@@ -3,10 +3,10 @@
     "weather": "Weather"
   },
   "content": {
-    "temp": "Temp",
+    "temp": "Current Temprature",
     "Feel_Like": "Feel's Like",
-    "min": "Min",
-    "max": "Max",
+    "min": "Min.",
+    "max": "Max.",
     "pressure": "Pressure",
     "humidity": "Humidity",
     "deatils": "Weather",
@@ -15,9 +15,10 @@
   },
   "error": {},
   "message": {},
+  "language": "Language",
   "lang": {
     "en": "English",
-    "ger": "Germany",
+    "de": "Germany",
     "fr": "French"
   }
 }

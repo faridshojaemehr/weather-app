@@ -6,49 +6,44 @@
     <h1 class="city-name">{{ weatherData?.name }}</h1>
     <section class="data-section">
       <div class="item">
-        <span class="field-name"
-          >{{ "content.temp" | translate }} Now:
-          {{ weatherData.main.temp }} °C</span
-        >
+        <span class="field-name">{{ "content.temp" | translate }} : </span>
+        <span class="result">{{ weatherData.main.temp }} °C</span>
       </div>
       <div class="item">
-        <span class="field-name"
-          >{{ "content.Feel_Like" | translate }}:
-          {{ weatherData.main.feels_like }} °C</span
-        >
+        <span class="field-name">{{ "content.Feel_Like" | translate }}: </span>
+        <span class="result"> {{ weatherData.main.feels_like }} °C </span>
       </div>
       <div class="item">
-        <span class="field-name"
-          >{{ "content.min" | translate }}:
-          {{ weatherData.main.temp_min }} °C</span
-        >
+        <span class="field-name">{{ "content.min" | translate }}: </span>
+        <span class="result"> {{ weatherData.main.temp_min }} °C </span>
       </div>
       <div class="item">
-        <span class="field-name"
-          >{{ "content.max" | translate }}::
-          {{ weatherData.main.temp_max }} °C</span
-        >
+        <span class="field-name">{{ "content.max" | translate }}: </span>
+        <span class="result"> {{ weatherData.main.temp_max }} °C </span>
       </div>
       <div class="item">
-        <span class="field-name"
-          >{{ "content.pressure" | translate }}:
-          {{ weatherData.main.pressure }} mm</span
-        >
+        <span class="field-name">{{ "content.pressure" | translate }}: </span>
+        <span class="result"> {{ weatherData.main.pressure }} mm </span>
       </div>
       <div class="item">
-        <span class="field-name"
-          >{{ "content.humidity" | translate }}:
-          {{ weatherData.main.humidity }} %</span
-        >
+        <span class="field-name">{{ "content.humidity" | translate }}: </span>
+        <span class="result"> {{ weatherData.main.humidity }}% </span>
       </div>
-    </section>
-    <section *ngFor="let weather of weatherData.weather" class="main">
-      <h4>{{ "content.deatils" | translate }}</h4>
-      <div class="item">
-        <span class="field-name">Status: {{ weather.main }}</span>
-      </div>
-      <div class="item">
-        <span class="field-name">Description: {{ weather.description }}</span>
+      <div class="description" *ngFor="let weather of weatherData.weather">
+        <div class="item">
+          <span class="field-name">{{ "content.status" | translate }}: </span>
+          <span class="result">
+            {{ weather.main }}
+          </span>
+        </div>
+        <div class="item">
+          <span class="field-name"
+            >{{ "content.description" | translate }}:</span
+          >
+          <span class="result">
+            {{ weather.description | titlecase }}
+          </span>
+        </div>
       </div>
     </section>
   </div>

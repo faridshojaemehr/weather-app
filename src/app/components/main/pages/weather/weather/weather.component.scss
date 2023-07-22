@@ -8,6 +8,9 @@
     width: calc(100vw - 16px - 16px);
     margin-top: 40px;
 }
+.item {
+    margin-bottom: 10px;
+}
 .error {
     display: flex;
     justify-content: center;
@@ -57,8 +60,18 @@ section {
 }
 .field-name {
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 20px;
 }
-.main h4 {
+.description {
+    margin-bottom: 10px; 
+}
+.description h4 {
     color: var(--lable-color);
 }
+.result {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+

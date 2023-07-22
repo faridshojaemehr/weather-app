@@ -9,10 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'weather-app';
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en', 'ger', 'fr']);
+    this.translate.addLangs(['en', 'de', 'fr']);
     this.translate.setDefaultLang('en');
 
     const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/en|ger|fr/) ? browserLang : 'en');
+    this.translate.use(browserLang.match(/en|de|fr/) ? browserLang : 'en');
   }
 }

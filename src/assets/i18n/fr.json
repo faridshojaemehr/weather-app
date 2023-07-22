@@ -1,9 +1,9 @@
 {
   "header": {
-    "weather": "Weather"
+    "weather": "Temps"
   },
   "content": {
-    "temp": "Temp",
+    "temp": "Température actuelle",
     "Feel_Like": "C'est comme",
     "min": "Min",
     "max": "maximum",
@@ -15,9 +15,10 @@
   },
   "error": {},
   "message": {},
+  "language": "Langue",
   "lang": {
     "en": "Anglais",
-    "ger": "Allemagne",
+    "de": "Allemagne",
     "fr": "Français"
   }
 }

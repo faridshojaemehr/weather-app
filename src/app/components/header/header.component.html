@@ -1,3 +1,19 @@
-<header class="glass-container">
+<header class="container glass-container">
   <h2>Angular {{ "header.weather" | translate }}</h2>
+  <div>
+    <button class="menu-button" mat-button [matMenuTriggerFor]="menu">
+      {{ "language" | translate }}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeLang('en')">
+        {{ "lang.en" | translate }}
+      </button>
+      <button mat-menu-item (click)="changeLang('de')">
+        {{ "lang.de" | translate }}
+      </button>
+      <button mat-menu-item (click)="changeLang('fr')">
+        {{ "lang.fr" | translate }}
+      </button>
+    </mat-menu>
+  </div>
 </header>
