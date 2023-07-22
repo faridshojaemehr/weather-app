@@ -1,9 +1,15 @@
 <!-- <app-weather></app-weather> -->
 
 <div class="container">
-  <section>
-    <input type="text" #input />
-    <button class="search-btn" (click)="search(input.value)">search</button>
+  <section class="layout">
+    <mat-form-field class="form-field">
+      <mat-label>{{ "search" | translate }}</mat-label>
+      <input matInput #input />
+    </mat-form-field>
+
+    <button class="search-btn" mat-raised-button (click)="search(input.value)">
+      {{ "search" | translate }}
+    </button>
   </section>
 </div>
 <app-weather [cityName]="cityName"></app-weather>

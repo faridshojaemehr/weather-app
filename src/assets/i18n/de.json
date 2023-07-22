@@ -15,10 +15,12 @@
   },
   "error": {},
   "message": {},
+  "search": "Suchen",
+  "chosenLang": "Deutsch",
   "language": "Sprache",
   "lang": {
     "en": "Englisch",
-    "de": "Deutschland",
+    "de": "Deutsch",
     "fr": "Französisch"
   }
 }

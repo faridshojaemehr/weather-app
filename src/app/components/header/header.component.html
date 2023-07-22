@@ -2,7 +2,7 @@
   <h2>Angular {{ "header.weather" | translate }}</h2>
   <div>
     <button class="menu-button" mat-button [matMenuTriggerFor]="menu">
-      {{ "language" | translate }}
+      {{ "language" | translate }} ({{ "chosenLang" | translate }})
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="changeLang('en')">
