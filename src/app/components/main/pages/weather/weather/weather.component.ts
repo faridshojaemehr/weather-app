@@ -26,7 +26,6 @@ export class WeatherComponent {
       .subscribe({
         next: (response) => {
           if (response) {
-            this.hasError = false;
             if (!response.error) {
               this.weatherData$ = of(response);
               this.hasError = false;

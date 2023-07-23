@@ -5,8 +5,8 @@
   "content": {
     "temp": "Current Temprature",
     "Feel_Like": "Feel's Like",
-    "min": "Min.",
-    "max": "Max.",
+    "min": "Min",
+    "max": "Max",
     "pressure": "Pressure",
     "humidity": "Humidity",
     "deatils": "Weather",
