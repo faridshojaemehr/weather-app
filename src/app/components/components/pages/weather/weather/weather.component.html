@@ -1,30 +1,33 @@
-<div class="container" *ngIf="weatherData$ | async as weatherData">
+<div
+  class="container"
+  *ngIf="weatherData$ | async as weatherData; else showError"
+>
   <div class="modal-container glass-container">
     <h1 class="city-name">{{ weatherData?.name }}</h1>
     <section class="data-section">
       <div class="item">
         <span class="field-name">{{ "content.temp" | translate }} : </span>
-        <span class="result">{{ weatherData?.main.temp }} °C</span>
+        <span class="result">{{ weatherData?.main?.temp }} °C</span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.Feel_Like" | translate }}: </span>
-        <span class="result"> {{ weatherData?.main.feels_like }} °C </span>
+        <span class="result"> {{ weatherData?.main?.feels_like }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.min" | translate }}: </span>
-        <span class="result"> {{ weatherData?.main.temp_min }} °C </span>
+        <span class="result"> {{ weatherData?.main?.temp_min }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.max" | translate }}: </span>
-        <span class="result"> {{ weatherData?.main.temp_max }} °C </span>
+        <span class="result"> {{ weatherData?.main?.temp_max }} °C </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.pressure" | translate }}: </span>
-        <span class="result"> {{ weatherData?.main.pressure }} mm </span>
+        <span class="result"> {{ weatherData?.main?.pressure }} mm </span>
       </div>
       <div class="item">
         <span class="field-name">{{ "content.humidity" | translate }}: </span>
-        <span class="result"> {{ weatherData?.main.humidity }}% </span>
+        <span class="result"> {{ weatherData?.main?.humidity }}% </span>
       </div>
       <div class="description" *ngFor="let weather of weatherData?.weather">
         <div class="item">
@@ -46,12 +49,11 @@
   </div>
 </div>
 <ng-template #showError>
-  <div class="container" *ngIf="weatherData$ | async as error">
+  <div class="container" *ngIf="hasError">
     <div class="modal-container glass-container error">
-      <h1 class="error-title">{{ error.error.cod }}</h1>
+      <h1 class="error-title">{{ errorObj?.cod }}</h1>
       <span class="error-description"
-        >{{ cityName | titlecase }} :
-        {{ error.error.message | titlecase }}</span
+        >{{ cityName | titlecase }} : {{ errorObj?.message | titlecase }}</span
       >
     </div>
   </div>

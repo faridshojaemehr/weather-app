@@ -14,7 +14,7 @@ export interface IWeather {
   id: number;
   name: string;
   cod: number;
-  error?: IError;
+  error?: IError | null;
 }
 
 export interface Sys {

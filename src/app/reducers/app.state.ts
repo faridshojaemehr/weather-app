@@ -15,12 +15,6 @@ export interface WeatherData {
   [city: string]: IWeather;
 }
 
-export const initialState: WeatherState = {
-  weatherData: {},
-  lastFetched: {},
-  loading: false,
-  error: null,
-};
 export enum WeatherActionTypes {
   GetWeatherData = '[Weather] Get Weather Data',
   SetWeatherData = '[Weather] Set Weather Data',

@@ -9,7 +9,7 @@ import { IWeather } from '../../models/weather/weather.interface';
 export class WeatherService {
   private readonly apiKey = '42c06bcad8336a3402aeb2e0cdb60c35';
   private readonly api = 'https://api.openweathermap.org/data/2.5/weather';
-  private readonly units = 'metric';
+
   constructor(private http: HttpClient) {}
 
   public getWeatherByCity(city: string): Observable<IWeather> {

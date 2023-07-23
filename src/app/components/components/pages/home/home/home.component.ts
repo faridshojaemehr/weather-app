@@ -12,8 +12,7 @@ export class HomeComponent {
   constructor(private store: Store) {}
 
   public onSearch(city: string): void {
-    const dta = this.store.dispatch(getWeatherData({ city }));
+    this.store.dispatch(getWeatherData({ city }));
     this.cityName = city;
-    console.log(dta);
   }
 }

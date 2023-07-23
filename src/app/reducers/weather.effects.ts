@@ -1,18 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {
-  mergeMap,
-  map,
-  catchError,
-  withLatestFrom,
-  filter,
-} from 'rxjs/operators';
-import { of, timer } from 'rxjs';
-import { WeatherService } from '../core/services/weather/weather.service';
-import * as WeatherActions from './weather.actions';
 import { Store } from '@ngrx/store';
+import { of, timer } from 'rxjs';
+import { catchError, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import { WeatherService } from '../core/services/weather/weather.service';
 import { AppState } from './app.state';
-import { IError } from '../core/models/error.interface';
+import * as WeatherActions from './weather.actions';
 
 @Injectable()
 export class WeatherEffects {
@@ -64,10 +57,10 @@ export class WeatherEffects {
     )
   );
 
-  private getErrorInfo(error: IError) {
+  private getErrorInfo(error) {
     return {
-      cod: error?.cod || 500,
-      message: error?.message || 'Unknown error occurred.',
+      cod: error?.error.cod || 500,
+      message: error?.error.message || 'Unknown error occurred.',
     };
   }
 }
