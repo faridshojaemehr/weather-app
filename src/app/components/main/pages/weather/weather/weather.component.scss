@@ -39,11 +39,33 @@
         max-width: 550px;
         margin-top: 56px;
     }
+    .error-title {
+        color: var(--error-color);
+        font-size: 22px !important;
+        margin: 16px;
+    }
+    .error-description {
+        color: var(--error-color);
+        font-size: 28px !important;
+        font-weight: bold;
+        margin: 0px 16px 16px;
+    }
 }
 
 @media screen and (min-width: 991px) {
     .modal-container {
         margin-top: 144px;
+    }
+    .error-title {
+        color: var(--error-color);
+        font-size: 22px !important;
+        margin: 16px;
+    }
+    .error-description {
+        color: var(--error-color);
+        font-size: 28px !important;
+        // font-weight: bold;
+        margin: 0px 16px 16px;
     }
 }
 .data-section:nth-last-child(1) {
