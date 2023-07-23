@@ -18,7 +18,6 @@ export class WeatherService {
       appid: this.apiKey,
       units: 'metric',
     };
-    // const url = `${this.api}${city}&units=${this.units}&appid=${this.apiKey}`;
-    return this.http.get<IWeather>(this.api, { params });
+    return this.http.get<IWeather>(this.api, { params: params });
   }
 }

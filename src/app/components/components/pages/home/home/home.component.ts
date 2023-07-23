@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getWeatherData } from 'src/app/reducers/weather.action';
+import { getWeatherData } from 'src/app/reducers/weather.actions';
 
 @Component({
   selector: 'app-home',

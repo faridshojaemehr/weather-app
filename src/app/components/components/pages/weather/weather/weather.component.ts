@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { IError } from 'src/app/core/models/error.interface';
 import { IWeather } from 'src/app/core/models/weather/weather.interface';
 import { WeatherService } from 'src/app/core/services/weather/weather.service';
+import { AppState } from 'src/app/reducers/app.state';
 
 @Component({
   selector: 'app-weather',
@@ -15,7 +16,7 @@ export class WeatherComponent implements OnChanges {
   @Input() public cityName: string;
   errorObj: IError;
 
-  public weatherData$: Observable<IWeather>;
+  public weatherData$: Observable<IWeather | null>;
   public hasError: boolean = false;
 
   constructor(
@@ -23,7 +24,9 @@ export class WeatherComponent implements OnChanges {
     private weatherService: WeatherService,
     private store: Store
   ) {
-    this.weatherData$ = this.store.pipe(select((state) => state as any));
+    this.weatherData$ = this.store.pipe(
+      select((state: AppState) => state.weather.weatherData)
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {

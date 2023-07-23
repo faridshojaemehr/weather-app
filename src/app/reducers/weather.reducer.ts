@@ -1,15 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import * as WeatherActions from './weather.action';
-import { IWeather } from '../core/models/weather/weather.interface';
-
-export interface WeatherState {
-  weatherData: IWeather;
-  loading?: boolean;
-  error?: any;
-}
+import * as WeatherActions from './weather.actions';
+import { WeatherState } from './app.state';
 
 export const initialState: WeatherState = {
   weatherData: null,
+  lastFetched: 0,
   loading: false,
   error: null,
 };
@@ -24,6 +19,7 @@ export const weatherReducer = createReducer(
   on(WeatherActions.setWeatherData, (state, { weatherData }) => ({
     ...state,
     weatherData,
+    lastFetched: Date.now(),
     loading: false,
     error: null,
   })),
