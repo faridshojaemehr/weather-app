@@ -14,17 +14,16 @@ export const weatherReducer = createReducer(
     weatherData: {
       ...state.weatherData,
       [city]: { ...weatherData, error: null },
-    }, // Clear error on successful data retrieval
+    },
     lastFetched: { ...state.lastFetched, [city]: Date.now() },
     loading: false,
     error: null,
   })),
   on(WeatherActions.clearWeatherData, (state, { city }) => ({
     ...state,
-    weatherData: { ...state.weatherData, [city]: null, error: null }, // Clear error when clearing weather data
+    weatherData: { ...state.weatherData, [city]: null }, // Do not clear the error here, let it remain for the city if previously set
     lastFetched: { ...state.lastFetched, [city]: 0 },
     loading: false,
-    error: null,
   })),
   on(WeatherActions.weatherDataError, (state, { city, error }) => ({
     ...state,

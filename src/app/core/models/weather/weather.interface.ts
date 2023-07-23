@@ -1,3 +1,5 @@
+import { IError } from '../error.interface';
+
 export interface IWeather {
   coord: Coord;
   weather: Weather[];
@@ -12,6 +14,7 @@ export interface IWeather {
   id: number;
   name: string;
   cod: number;
+  error?: IError;
 }
 
 export interface Sys {

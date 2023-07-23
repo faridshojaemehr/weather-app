@@ -1,8 +1,5 @@
 <div class="container" *ngIf="weatherData$ | async as weatherData">
-  <div
-    *ngIf="!hasError; else showError"
-    class="modal-container glass-container"
-  >
+  <div class="modal-container glass-container">
     <h1 class="city-name">{{ weatherData?.name }}</h1>
     <section class="data-section">
       <div class="item">
@@ -49,10 +46,13 @@
   </div>
 </div>
 <ng-template #showError>
-  <div class="modal-container glass-container error">
-    <h1 class="error-title">{{ errorObj.cod }}</h1>
-    <span class="error-description"
-      >{{ cityName | titlecase }} : {{ errorObj.message | titlecase }}</span
-    >
+  <div class="container" *ngIf="weatherData$ | async as error">
+    <div class="modal-container glass-container error">
+      <h1 class="error-title">{{ error.error.cod }}</h1>
+      <span class="error-description"
+        >{{ cityName | titlecase }} :
+        {{ error.error.message | titlecase }}</span
+      >
+    </div>
   </div>
 </ng-template>
