@@ -1,16 +1,9 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store, select } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { IError } from 'src/app/core/models/error.interface';
 import { IWeather } from 'src/app/core/models/weather/weather.interface';
-import { WeatherService } from 'src/app/core/services/weather/weather.service';
 import { AppState } from 'src/app/reducers/app.state';
 
 @Component({
@@ -52,6 +45,6 @@ export class WeatherComponent {
   }
 
   public openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+    this._snackBar.open(message, action, { duration: 5000 });
   }
 }

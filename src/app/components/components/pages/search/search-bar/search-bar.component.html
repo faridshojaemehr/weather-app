@@ -1,12 +1,10 @@
-<!-- <app-weather></app-weather> -->
-
 <div class="container">
   <section class="layout">
     <mat-form-field class="form-field">
       <mat-label>{{ "search" | translate }}</mat-label>
-      <input matInput #input />
+      <input matInput #input (keypress)="search.next($event)" />
     </mat-form-field>
-
+    <!-- (keydown.enter)="search.next($event)" -->
     <button
       class="search-btn"
       mat-raised-button
