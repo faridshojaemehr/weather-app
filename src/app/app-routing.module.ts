@@ -5,14 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./components/components/pages/search/search.module').then(
+      import('./components/main/pages/search/search.module').then(
         (m) => m.SearchModule
       ),
   },
   {
     path: '',
     loadChildren: () =>
-      import('./components/components/pages/weather/weather.module').then(
+      import('./components/main/pages/weather/weather.module').then(
         (m) => m.WeatherModule
       ),
   },
