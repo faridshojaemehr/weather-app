@@ -5,8 +5,22 @@ export interface AppState {
 }
 
 export interface WeatherState {
-  weatherData: IWeather | null;
-  lastFetched: number;
+  weatherData: { [city: string]: IWeather };
+  lastFetched: { [city: string]: number };
   loading: boolean;
   error: any;
+}
+
+export const initialState: WeatherState = {
+  weatherData: {},
+  lastFetched: {},
+  loading: false,
+  error: null,
+};
+
+export enum WeatherActionTypes {
+  GetWeatherData = '[Weather] Get Weather Data',
+  SetWeatherData = '[Weather] Set Weather Data',
+  ClearWeatherData = '[Weather] Clear Weather Data',
+  WeatherDataError = '[Weather] Weather Data Error',
 }

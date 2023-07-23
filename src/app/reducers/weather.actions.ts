@@ -1,16 +1,23 @@
 import { createAction, props } from '@ngrx/store';
 import { IWeather } from '../core/models/weather/weather.interface';
+import { WeatherActionTypes } from './app.state';
 
 export const getWeatherData = createAction(
-  '[Weather] Get Weather Data',
+  WeatherActionTypes.GetWeatherData,
   props<{ city: string }>()
 );
+
 export const setWeatherData = createAction(
-  '[Weather] Set Weather Data',
-  props<{ weatherData: IWeather }>()
+  WeatherActionTypes.SetWeatherData,
+  props<{ city: string; weatherData: IWeather }>()
 );
-export const clearWeatherData = createAction('[Weather] Clear Weather Data');
+
+export const clearWeatherData = createAction(
+  WeatherActionTypes.ClearWeatherData,
+  props<{ city: string }>()
+);
+
 export const weatherDataError = createAction(
-  '[Weather] Weather Data Error',
-  props<{ error: any }>()
+  WeatherActionTypes.WeatherDataError,
+  props<{ city: string; error: any }>()
 );

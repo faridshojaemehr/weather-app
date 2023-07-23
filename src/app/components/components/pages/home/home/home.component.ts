@@ -8,10 +8,11 @@ import { getWeatherData } from 'src/app/reducers/weather.actions';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  cityName: string = 'Tehran';
+  cityName: string;
   constructor(private store: Store) {}
 
   public onSearch(city: string): void {
     this.store.dispatch(getWeatherData({ city }));
+    this.cityName = city;
   }
 }
